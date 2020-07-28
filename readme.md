@@ -4,8 +4,6 @@
 
 Create a simple docker-compose file that start a small redis.
 
-commit: 
-
 ## Network
 
 Create an isolated network, called backed,  and put the redis in it.
