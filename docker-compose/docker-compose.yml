@@ -9,9 +9,17 @@ services:
     image: postgres:13-alpine
     restart: always
     environment:
-      POSTGRES_PASSWORD: robocop
+      -e POSTGRES_USER=discourse -e POSTGRES_DB=discourse -e POSTGRES_PASSWORD=discourse
     networks:
       - web
+  discourse:
+    image: libresh/discourse:v2.5.0
+    restart: always
+    ports:
+      - 80:5000
+    networks:
+      - web
+      - backend
 networks:
   backend:
   web:
